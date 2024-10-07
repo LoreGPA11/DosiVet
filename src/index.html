@@ -3,11 +3,166 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DosiVet</title>
-  <link rel="stylesheet" href="index.css">
+  <title>DosiVet Formulario</title>
+  <style>
+    header {
+      background-color: olive;
+      color: white;
+      padding: 10px;
+      position: relative;
+    }
+    header div {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  </style>
 </head>
 <body>
-  <div id="root"></div>
-  <script src="index.js"></script>
+
+  <!-- Encabezado -->
+  <header>
+    <h1>DosiVet</h1>
+    <div>
+      <p>Usuario: UsuarioActual</p>
+      <p>Fecha: <!-- Puedes agregar la fecha y hora manualmente --> </p>
+    </div>
+  </header>
+
+  <!-- Formulario -->
+  <form>
+    <h2>Información del paciente</h2>
+    <label>
+      Nombre:
+      <input type="text" name="nombre" required />
+    </label>
+    <br />
+    <label>
+      Especie:
+      <input type="text" name="especie" required />
+    </label>
+    <br />
+    <label>
+      Nombre del dueño:
+      <input type="text" name="nombreDueno" required />
+    </label>
+    <br />
+    <label>
+      Dirección:
+      <input type="text" name="direccion" required />
+    </label>
+    <br />
+    <label>
+      Teléfono del dueño:
+      <input type="number" name="telefonoDueno" required />
+    </label>
+    <br />
+
+    <!-- Botón para habilitar historial clínico -->
+    <button type="button" onclick="document.getElementById('clinicalHistory').style.display = 'block';">
+      Ingresar datos del historial clínico
+    </button>
+
+    <!-- Campos del historial clínico (inicialmente ocultos) -->
+    <div id="clinicalHistory" style="display: none;">
+      <h2>Historial clínico del paciente</h2>
+      <label>
+        Tratamiento previo:
+        <select name="tratamientoPrevio" required>
+          <option value="">Seleccione</option>
+          <option value="Sí">Sí</option>
+          <option value="No">No</option>
+          <option value="Desconocido">Desconocido</option>
+        </select>
+      </label>
+      <br />
+      <label>
+        Detalles del tratamiento previo:
+        <input type="text" name="detallesTratamientoPrevio" required />
+      </label>
+      <br />
+      <label>
+        Peso:
+        <input type="number" name="peso" required />
+        <select name="unidadPeso">
+          <option value="Kg">Kg</option>
+          <option value="g">g</option>
+        </select>
+      </label>
+      <br />
+      <label>
+        Edad:
+        <input type="number" name="edad" required />
+        <select name="unidadEdad">
+          <option value="Años">Años</option>
+          <option value="Meses">Meses</option>
+        </select>
+      </label>
+      <br />
+      <label>
+        Sexo:
+        <select name="sexo" required>
+          <option value="">Seleccione</option>
+          <option value="Macho">Macho</option>
+          <option value="Hembra">Hembra</option>
+        </select>
+      </label>
+      <br />
+      <label>
+        Enfermedades/condiciones:
+        <input type="text" name="enfermedadesCondiciones" required />
+      </label>
+      <br />
+      <label>
+        Raza:
+        <input type="text" name="raza" required />
+      </label>
+      <br />
+      <label>
+        Tipo de consulta:
+        <select name="tipoConsulta" required>
+          <option value="">Seleccione</option>
+          <option value="Internado">Internado</option>
+          <option value="Urgencias">Urgencias</option>
+          <option value="Consulta cotidiana">Consulta cotidiana</option>
+          <option value="De seguimiento">De seguimiento</option>
+        </select>
+      </label>
+      <br />
+      <label>
+        Motivo de consulta:
+        <input type="text" name="motivoConsulta" required />
+      </label>
+      <br />
+      <label>
+        Signos y síntomas:
+        <input type="text" name="signosSintomas" required />
+      </label>
+      <br />
+      <label>
+        Estudios previos:
+        <input type="text" name="estudiosPrevios" required />
+      </label>
+      <br />
+      <label>
+        Diagnóstico o posible diagnóstico:
+        <input type="text" name="diagnostico" required />
+      </label>
+      <br />
+      <label>
+        Protocolo seguido/a seguir:
+        <input type="text" name="protocolo" required />
+      </label>
+      <br />
+      <label>
+        Notas:
+        <input type="text" name="notas" required />
+      </label>
+      <br />
+    </div>
+
+    <button type="submit">Enviar</button>
+  </form>
+
 </body>
 </html>
