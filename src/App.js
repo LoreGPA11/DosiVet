@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+/*import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -7,6 +7,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
+          Hooooola
+
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
@@ -22,4 +24,20 @@ function App() {
   );
 }
 
+export default App;--
+*/
+
+import React from 'react';
+import DosiVetForm from './DosiVetForm'; // Importa mi nuevo código
+
+function App() {
+  return (
+    <div className="App">
+      <DosiVetForm />
+    </div>
+  );
+}
+
 export default App;
+
+
