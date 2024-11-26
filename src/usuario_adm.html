@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio Admin</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    header {
+      background-color: olive;
+      color: white;
+      padding: 10px;
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    header h2 {
+      margin-top: 5px;
+      font-size: 1.2em;
+      color: lightyellow;
+    }
+
+    table {
+      width: 80%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    table th, table td {
+      border: 1px solid #ccc;
+      text-align: center;
+      padding: 8px;
+    }
+
+    table th {
+      background-color: olive;
+      color: white;
+    }
+
+    .form-container {
+      background-color: white;
+      border: 3px solid olive;
+      border-radius: 10px;
+      padding: 20px;
+      width: 400px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    .form-container h2 {
+      margin-top: 0;
+      color: olive;
+    }
+
+    .form-container label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    .form-container input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: olive;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .form-container button:hover {
+      background-color: darkolivegreen;
+    }
+
+    .action-buttons {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .action-buttons button {
+      padding: 5px 10px;
+      background-color: olive;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .action-buttons button:hover {
+      background-color: darkolivegreen;
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <h1>Inicio de Administración - DosiVet</h1>
+    <h2 id="current-datetime"></h2>
+  </header>
+
+  <!-- Tabla con usuarios -->
+  <table>
+    <thead>
+      <tr>
+        <th>Id Usuario</th>
+        <th>Usuario (login)</th>
+        <th>Contraseña</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Juan Pérez</td>
+        <td>Juan</td>
+        <td>123</td>
+        <td class="action-buttons">
+          <button>Editar usuario</button>
+          <button>Eliminar usuario</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Luis Solano</td>
+        <td>Luis</td>
+        <td>456</td>
+        <td class="action-buttons">
+          <button>Editar usuario</button>
+          <button>Eliminar usuario</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Alondra Díaz</td>
+        <td>Alondra</td>
+        <td>789</td>
+        <td class="action-buttons">
+          <button>Editar usuario</button>
+          <button>Eliminar usuario</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Formulario para crear nuevo usuario -->
+  <div class="form-container">
+    <h2>Crear Nuevo Usuario</h2>
+    <form>
+      <label for="new-username">Nombre de Usuario (login)</label>
+      <input type="text" id="new-username" name="new-username" placeholder="Ingresa el nombre de usuario" required>
+      
+      <label for="new-password">Contraseña</label>
+      <input type="password" id="new-password" name="new-password" placeholder="Ingresa la contraseña" required>
+      
+      <label for="confirm-password">Confirmar Contraseña</label>
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirma la contraseña" required>
+      
+      <button type="submit">Crear Nuevo Usuario</button>
+    </form>
+  </div>
+
+  <script>
+    // Función para mostrar la fecha y hora actuales
+    function updateDateTime() {
+      const now = new Date();
+      const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric', 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit' 
+      };
+      document.getElementById('current-datetime').textContent = now.toLocaleDateString('es-ES', options);
+    }
+
+    // Llamar la función al cargar la página
+    updateDateTime();
+    // Actualizar cada segundo
+    setInterval(updateDateTime, 1000);
+  </script>
+</body>
+</html>
